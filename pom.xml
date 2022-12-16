@@ -17,7 +17,7 @@
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.projectKey>awsdevops-codescan</sonar.projectKey>
         <sonar.login>${env.SONAR_TOKEN}</sonar.login>
-        <!-- <sonar.login>c0f1540bf704f765960da91aca2a979b2be42292</sonar.login> -->
+        <!-- <sonar.login></sonar.login> -->
 
         
     </properties>
