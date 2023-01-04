@@ -1,0 +1,32 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: 11
+    commands:
+      - echo install phase
+  pre_build:
+    commands:
+      - cd $CODEBUILD_SRC_DIR/
+      - pwd
+      - ls -lrta
+      - npm install
+  build:
+    commands:
+      - echo Build Started
+      - pwd
+      - ls -lrta
+      - aws s3 sync . s3://codewithck.com/
+      - echo Files were uploaded unto s3 bucket
+  post_build:
+    commands:
+      - echo "post build started `date`"
+      - pwd
+      - ls -lrta
+      - aws cloudfront create-invalidation --distribution-id E1ILYLEUWWU6CE --paths "/*"
+      - echo "Code has been deployed unto CloudFront `date`"
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
