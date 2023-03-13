@@ -1,9 +1,9 @@
 
-STEP-1 : Launch a SonarQube Virtual Machine/Instace OR Containerise Or SaaS
+#### STEP-1 : Launch a SonarQube Virtual Machine/Instace OR Containerise Or SaaS
 
-STEP-2 : Login to SonarQube 
+#### STEP-2 : Login to SonarQube 
 
-STEP-3 : Create a Project in SonarQube 
+#### STEP-3 : Create a Project in SonarQube 
 
     - Oragnisation Name : 
     - Project Name : 
@@ -11,16 +11,15 @@ STEP-3 : Create a Project in SonarQube
     - Project URL :
     - Project Key :
 
-STEP-4 : Take the above details and integrate with SCM/VCS i.e. Source Code pom.xml
+#### STEP-4 : Take the above details and integrate with SCM/VCS i.e. Source Code pom.xml
 
-STEP-5 : Create a CodeBuild Job in AWS & Execute Sonar Goal
+#### STEP-5 : Create a CodeBuild Job in AWS & Execute Sonar Goal
 
-# mvn verify sonar:sonar 
+    # mvn verify sonar:sonar 
 
-STEP-6 : Validate & Clean Up!
+#### STEP-6 : Validate & Clean Up!
 
-
-
+```
 version: 0.2
 
 phases:
@@ -67,5 +66,5 @@ phases:
   post_build:
     commands:
       - echo "Infra Job is completed on `date`"
-
+```
       
